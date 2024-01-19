@@ -10,3 +10,10 @@ FROM store;
 
 ALTER TABLE customers
 ADD PRIMARY KEY(customer_id);
+
+ALTER TABLE customers
+RENAME COLUMN customer_id TO id;
+ALTER TABLE customers
+RENAME COLUMN customer_phone TO phone;
+ALTER TABLE customers
+RENAME COLUMN customer_email TO email;
