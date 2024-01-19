@@ -39,3 +39,6 @@ CREATE TABLE items AS
 SELECT DISTINCT item_id id, item_name name, item_price price
 FROM temp_store
 WHERE item_id IS NOT NULL;
+
+ALTER TABLE items
+ADD PRIMARY KEY(id);
