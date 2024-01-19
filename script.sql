@@ -7,3 +7,6 @@ FROM store;
 CREATE TABLE customers AS
 SELECT DISTINCT customer_id, customer_phone, customer_email
 FROM store;
+
+ALTER TABLE customers
+ADD PRIMARY KEY(customer_id);
