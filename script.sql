@@ -42,3 +42,8 @@ WHERE item_id IS NOT NULL;
 
 ALTER TABLE items
 ADD PRIMARY KEY(id);
+
+
+CREATE TABLE orders_items AS
+SELECT order_id, item_id
+FROM temp_store;
