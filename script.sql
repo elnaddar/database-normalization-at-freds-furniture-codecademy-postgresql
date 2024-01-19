@@ -72,3 +72,14 @@ WHERE order_date > '2019-07-25';
 SELECT date, email
 FROM orders o, customers c
 WHERE customer_id = c.id AND date > '2019-07-25';
+
+SELECT item_id, MIN(item_name) name, COUNT(*)
+FROM temp_store
+GROUP BY item_id
+ORDER BY COUNT(*) DESC;
+
+SELECT i.id, MIN(name) name, COUNT(order_id)
+FROM items i, orders_items
+WHERE i.id = item_id
+GROUP BY i.id
+ORDER BY COUNT(order_id) DESC;
