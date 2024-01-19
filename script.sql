@@ -63,3 +63,12 @@ ALTER TABLE orders_items
 ADD FOREIGN KEY (order_id) REFERENCES orders(id);
 ALTER TABLE orders_items
 ADD FOREIGN KEY (item_id) REFERENCES items(id);
+
+-- playing around
+SELECT order_date, customer_email
+FROM store
+WHERE order_date > '2019-07-25';
+
+SELECT date, email
+FROM orders o, customers c
+WHERE customer_id = c.id AND date > '2019-07-25';
