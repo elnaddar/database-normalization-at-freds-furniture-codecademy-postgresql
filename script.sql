@@ -83,3 +83,5 @@ FROM items i, orders_items
 WHERE i.id = item_id
 GROUP BY i.id
 ORDER BY COUNT(order_id) DESC;
+
+DROP TABLE IF EXISTS temp_store;
