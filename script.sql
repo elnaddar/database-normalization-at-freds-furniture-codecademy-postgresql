@@ -57,3 +57,9 @@ ADD PRIMARY KEY(id);
 
 ALTER TABLE orders
 ADD FOREIGN KEY (customer_id) REFERENCES customers(id);
+
+
+ALTER TABLE orders_items
+ADD FOREIGN KEY (order_id) REFERENCES orders(id);
+ALTER TABLE orders_items
+ADD FOREIGN KEY (item_id) REFERENCES items(id);
