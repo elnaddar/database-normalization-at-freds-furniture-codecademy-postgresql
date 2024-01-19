@@ -51,3 +51,6 @@ FROM temp_store;
 CREATE TABLE orders AS
 SELECT DISTINCT order_id id, order_date date, customer_id
 FROM temp_store;
+
+ALTER TABLE orders
+ADD PRIMARY KEY(id);
