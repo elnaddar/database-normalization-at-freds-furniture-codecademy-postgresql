@@ -17,3 +17,19 @@ ALTER TABLE customers
 RENAME COLUMN customer_phone TO phone;
 ALTER TABLE customers
 RENAME COLUMN customer_email TO email;
+
+
+CREATE TEMP TABLE temp_store AS
+SELECT *
+FROM
+(
+    SELECT order_id, order_date, customer_id, customer_email, customer_phone, item_1_id "item_id", item_1_name "item_name", item_1_price "item_price"
+    FROM store
+    UNION ALL
+    SELECT order_id, order_date, customer_id, customer_email, customer_phone, item_2_id "item_id", item_2_name "item_name", item_2_price "item_price"
+    FROM store
+    UNION ALL
+    SELECT order_id, order_date, customer_id, customer_email, customer_phone, item_3_id "item_id", item_3_name "item_name", item_3_price "item_price"
+    FROM store
+) AS temp_store
+WHERE item_id IS NOT NULL;
